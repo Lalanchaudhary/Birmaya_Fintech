@@ -27,8 +27,8 @@ export default function Navbar() {
                         </h1>
 
                         {/* Tagline hide on very small screen */}
-                        <p className="hidden sm:block text-[10px] sm:text-xs text-accent font-semibold">
-                            Loan Milega, Stress Nahi
+                        <p className="sm:block text-[8px] sm:text-sm text-accent font-semibold">
+                            Commitments Honored, Loans Delivered
                         </p>
                     </div>
                 </Link>
