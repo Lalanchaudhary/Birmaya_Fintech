@@ -5,29 +5,42 @@ import useTypewriter from "./useTypewriter";
 
 const slides = [
   {
-    image: "/hero/hero1.png",
+    desktop: "/hero/hero1.png",
+    mobile: "/hero/mobile/hero1-mobile.png",
     title: "Instant Loan Approval in 24 Hours",
     desc: "Minimal paperwork. Quick verification. Fast disbursal.",
     btn: "Apply Now",
   },
   {
-    image: "/hero/hero2.png",
+    desktop: "/hero/hero2.png",
+    mobile: "/hero/mobile/hero2-mobile.png",
     title: "Fuel Your Business Growth",
     desc: "Flexible business loans designed for your success.",
     btn: "Get Business Loan",
   },
   {
-    image: "/hero/hero4.png",
+    desktop: "/hero/hero4.png",
+    mobile: "/hero/mobile/hero4-mobile.png",
     title: "Your Trusted Financial Partner",
     desc: "Transparent process. No hidden charges.",
     btn: "Talk to Expert",
   },
 ];
 
+
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
   const typedTitle = useTypewriter(slides[current].title, 40);
   const typedDesc = useTypewriter(slides[current].desc, 20);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkScreen = () => setIsMobile(window.innerWidth < 768);
+  checkScreen();
+  window.addEventListener("resize", checkScreen);
+  return () => window.removeEventListener("resize", checkScreen);
+}, []);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -37,7 +50,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
 
       {slides.map((slide, index) => (
         <div
@@ -46,7 +59,7 @@ export default function HeroCarousel() {
             index === current ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image src={slide.image} alt="hero" fill className="object-cover" />
+          <Image src={isMobile ? slide.mobile : slide.desktop} alt="hero" fill className="object-cover" />
 
           <div className="absolute inset-0 bg-black/60"></div>
 

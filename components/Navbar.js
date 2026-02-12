@@ -2,7 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { HiBars3 } from "react-icons/hi2";
+import { HiBars3, HiXMark } from "react-icons/hi2";
+
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
@@ -54,26 +55,56 @@ export default function Navbar() {
                 {/* Mobile Menu Button */}
                 <button
                     className="lg:hidden text-3xl text-gray-700"
-                    onClick={() => setOpen(!open)}
+                    onClick={() => setOpen(true)}
                 >
                     <HiBars3 />
                 </button>
+
             </div>
 
             {/* Mobile Menu */}
             {open && (
                 <div className="md:hidden bg-white shadow-md">
-                    <ul className="flex flex-col items-center gap-6 py-6 font-medium">
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/services">Services</Link></li>
-                        <li><Link href="/about">About</Link></li>
-                        <li><Link href="/blog">Blog</Link></li>
-                        <li><Link href="/career">Career</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
-                        <button className="bg-accent text-white px-6 py-2 rounded-lg">
-                            Apply Loan
-                        </button>
-                    </ul>
+
+                    {/* Overlay */}
+                    <div
+                        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300 ${open ? "opacity-100 visible" : "opacity-0 invisible"
+                            }`}
+                        onClick={() => setOpen(false)}
+                    />
+
+                    {/* Slide Drawer */}
+                    <div
+                        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-50 shadow-2xl 
+  transform transition-transform duration-500 ease-in-out
+  ${open ? "translate-x-0" : "translate-x-full"}`}
+                    >
+                        {/* Header */}
+                        <div className="flex items-center justify-between p-5 border-b">
+                            <h2 className="text-lg font-bold text-primary">Menu</h2>
+                            <button onClick={() => setOpen(false)} className="text-3xl">
+                                <HiXMark />
+                            </button>
+                        </div>
+
+                        {/* Links */}
+                        <ul className="flex flex-col gap-6 p-6 text-lg font-medium text-gray-700">
+                            <li onClick={() => setOpen(false)}><Link href="/">Home</Link></li>
+                            <li onClick={() => setOpen(false)}><Link href="/services">Services</Link></li>
+                            <li onClick={() => setOpen(false)}><Link href="/about">About</Link></li>
+                            <li onClick={() => setOpen(false)}><Link href="/blog">Blog</Link></li>
+                            <li onClick={() => setOpen(false)}><Link href="/career">Career</Link></li>
+                            <li onClick={() => setOpen(false)}><Link href="/contact">Contact</Link></li>
+                        </ul>
+
+                        {/* CTA */}
+                        <div className="p-6 mt-auto">
+                            <button className="w-full bg-accent text-white py-3 rounded-lg font-semibold">
+                                Apply Loan
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             )}
         </nav>
