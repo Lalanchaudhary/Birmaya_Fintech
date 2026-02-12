@@ -23,7 +23,7 @@ export default function Navbar() {
                     <div className="leading-tight">
                         {/* Company name */}
                         <h1 className="text-sm sm:text-base lg:text-xl font-bold text-primary whitespace-nowrap">
-                            BIRMAYA FINTECH
+                            BI₹MAYA FINTECH
                         </h1>
 
                         {/* Tagline hide on very small screen */}
