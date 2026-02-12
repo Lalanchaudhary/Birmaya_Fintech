@@ -19,8 +19,8 @@ const slides = [
     btn: "Get Business Loan",
   },
   {
-    desktop: "/hero/hero4.png",
-    mobile: "/hero/mobile/hero4-mobile.png",
+    desktop: "/hero/hero5.png",
+    mobile: "/hero/mobile/hero5-mobile.png",
     title: "Your Trusted Financial Partner",
     desc: "Transparent process. No hidden charges.",
     btn: "Talk to Expert",
