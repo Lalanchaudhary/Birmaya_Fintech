@@ -6,18 +6,16 @@ import EmiCalculator from "@/components/Home/EmiCalculator";
 import Partners from "@/components/Home/Partners";
 import Stats from "@/components/Home/Stats";
 import Testimonials from "@/components/Home/Testimonials";
-import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <>
-    <Navbar/>
     <HeroCarousel/>
     <LoanProducts />
     <EmiCalculator />
     <Partners />
     <Stats />
     <Testimonials />
-    <Footer />
     </>
   );
 }

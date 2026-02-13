@@ -45,11 +45,17 @@ export default function Navbar() {
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>
 
+
                 {/* CTA Button */}
                 <div className="hidden lg:block">
-                    <button className="bg-accent text-white px-5 py-2 rounded-lg font-semibold hover:scale-105 transition">
-                        Apply Loan
-                    </button>
+                    <a
+                        href="https://www.paisabazaar.com/cibil/how-to-check-cibil-score-by-pan-card"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-primary text-white px-6 py-3 rounded-lg text-center font-semibold"
+                    >
+                        Check Credit Score
+                    </a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -80,9 +86,8 @@ export default function Navbar() {
   ${open ? "translate-x-0" : "translate-x-full"}`}
                     >
                         {/* Header */}
-                        <div className="flex items-center justify-between p-5 border-b">
-                            <h2 className="text-lg font-bold text-primary">Menu</h2>
-                            <button onClick={() => setOpen(false)} className="text-3xl">
+                        <div className="flex items-center justify-end p-5 border-b">
+                            <button onClick={() => setOpen(false)} className="text-3xl text-black">
                                 <HiXMark />
                             </button>
                         </div>
@@ -97,11 +102,18 @@ export default function Navbar() {
                             <li onClick={() => setOpen(false)}><Link href="/contact">Contact</Link></li>
                         </ul>
 
+
                         {/* CTA */}
                         <div className="p-6 mt-auto">
-                            <button className="w-full bg-accent text-white py-3 rounded-lg font-semibold">
-                                Apply Loan
-                            </button>
+                            <a
+                                href="https://www.paisabazaar.com/cibil/how-to-check-cibil-score-by-pan-card"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-primary text-white px-6 py-3 rounded-lg text-center font-semibold"
+                            >
+                                Check Credit Score
+                            </a>
+
                         </div>
                     </div>
 
