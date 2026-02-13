@@ -9,14 +9,14 @@ const slides = [
     mobile: "/hero/mobile/hero1-mobile.png",
     title: "Instant Loan Approval in 24 Hours",
     desc: "Minimal paperwork. Quick verification. Fast disbursal.",
-    btn: "Apply Now",
+    btn: '',
   },
   {
     desktop: "/hero/hero2.png",
     mobile: "/hero/mobile/hero2-mobile.png",
     title: "Fuel Your Business Growth",
     desc: "Flexible business loans designed for your success.",
-    btn: "Get Business Loan",
+    btn: '',
   },
   {
     desktop: "/hero/hero5.png",
@@ -34,12 +34,12 @@ export default function HeroCarousel() {
   const typedDesc = useTypewriter(slides[current].desc, 20);
   const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-  const checkScreen = () => setIsMobile(window.innerWidth < 768);
-  checkScreen();
-  window.addEventListener("resize", checkScreen);
-  return () => window.removeEventListener("resize", checkScreen);
-}, []);
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
 
   useEffect(() => {
@@ -55,9 +55,8 @@ useEffect(() => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute w-full h-full transition-opacity duration-700 ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute w-full h-full transition-opacity duration-700 ${index === current ? "opacity-100" : "opacity-0"
+            }`}
         >
           <Image src={isMobile ? slide.mobile : slide.desktop} alt="hero" fill className="object-cover" />
 
@@ -77,11 +76,11 @@ useEffect(() => {
                   <p className="text-lg md:text-xl mb-8">
                     {typedDesc}
                   </p>
-
-                  <button className="bg-accent px-8 py-3 rounded-lg font-semibold text-white hover:scale-105 transition">
-                    {slide.btn}
-                  </button>
-
+                  {slide.btn && (
+                    <button className="bg-accent px-8 py-3 rounded-lg font-semibold text-white hover:scale-105 transition">
+                      {slide.btn}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -95,9 +94,8 @@ useEffect(() => {
           <div
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              current === index ? "bg-white" : "bg-white/40"
-            }`}
+            className={`w-3 h-3 rounded-full cursor-pointer ${current === index ? "bg-white" : "bg-white/40"
+              }`}
           />
         ))}
       </div>

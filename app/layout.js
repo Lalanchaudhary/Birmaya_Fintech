@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import CustomCursor from "@/components/CustomCursor";
+import WhatsappButton from "@/components/WhatsappButton";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <CustomCursor />
+        <WhatsappButton />
         {children}
       </body>
     </html>

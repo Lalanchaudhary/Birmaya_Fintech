@@ -4,9 +4,9 @@ import { FaUsers, FaCheckCircle, FaUniversity, FaAward } from "react-icons/fa";
 
 const stats = [
   { icon: <FaUsers />, number: 5000, label: "Happy Customers" },
-  { icon: <FaCheckCircle />, number: 12000, label: "Loans Approved" },
+  { icon: <FaCheckCircle />, number: 12000, label: "Amount Approved" },
   { icon: <FaUniversity />, number: 35, label: "Partner Banks" },
-  { icon: <FaAward />, number: 10, label: "Years Experience" },
+  { icon: <FaAward />, number: 10, label: "Years Excellence" },
 ];
 
 export default function Stats() {
@@ -36,7 +36,7 @@ export default function Stats() {
               </div>
 
               <h3 className="text-4xl font-bold mb-2">
-                {counts[i]}+
+                {counts[i]}{stat.number ==12000 ? "cr" : "+"}
               </h3>
 
               <p className="text-white/80">{stat.label}</p>
