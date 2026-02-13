@@ -5,21 +5,26 @@ import { FaStar } from "react-icons/fa";
 const reviews = [
   {
     name: "Rahul Sharma",
+    rating: 3,
     text: "Got my personal loan approved within 24 hours. Very smooth and transparent process.",
   },
   {
     name: "Priya Verma",
+    rating: 3.5,
     text: "Amazing support team. They helped me get a business loan easily.",
   },
   {
     name: "Amit Singh",
+    rating: 5,
     text: "No hidden charges and very fast service. Highly recommended!",
   },
   {
     name: "Neha Gupta",
+    rating: 4,
     text: "Best loan experience ever. Everything was simple and quick.",
   },
 ];
+
 
 export default function Testimonials() {
   const scrollRef = useRef();
@@ -69,9 +74,17 @@ export default function Testimonials() {
             >
               {/* Stars */}
               <div className="flex gap-1 text-accent mb-4">
-                {[1,2,3,4,5].map((star) => (
-                  <FaStar key={star} />
+                {[...Array(5)].map((_, starIndex) => (
+                  <FaStar
+                    key={starIndex}
+                    className={
+                      starIndex < review.rating
+                        ? "text-accent"
+                        : "text-gray-300"
+                    }
+                  />
                 ))}
+
               </div>
 
               <p className="text-gray-600 mb-6 italic">
