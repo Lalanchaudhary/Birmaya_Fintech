@@ -27,7 +27,7 @@ export default function EmiCalculator() {
   }, [amount, rate, years]);
 
   return (
-    <section className="py-14 bg-[#F7F9FC]">
+    <section className="py-14 bg-[#F7F9FC]" id="emi-calculator">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="text-center mb-16">

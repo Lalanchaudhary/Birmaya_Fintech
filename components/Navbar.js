@@ -49,12 +49,12 @@ export default function Navbar() {
                 {/* CTA Button */}
                 <div className="hidden lg:block">
                     <a
-                        href="https://www.paisabazaar.com/cibil/how-to-check-cibil-score-by-pan-card"
+                        href="#emi-calculator"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-primary text-white px-6 py-3 rounded-lg text-center font-semibold"
                     >
-                        Check Credit Score
+                        Emi Calculator
                     </a>
                 </div>
 
@@ -106,12 +106,12 @@ export default function Navbar() {
                         {/* CTA */}
                         <div className="p-6 mt-auto">
                             <a
-                                href="https://www.paisabazaar.com/cibil/how-to-check-cibil-score-by-pan-card"
+                                href="#emi-calculator"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-primary text-white px-6 py-3 rounded-lg text-center font-semibold"
                             >
-                                Check Credit Score
+                                EMI Calculator
                             </a>
 
                         </div>
