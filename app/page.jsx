@@ -6,7 +6,7 @@ import EmiCalculator from "@/components/Home/EmiCalculator";
 import Partners from "@/components/Home/Partners";
 import Stats from "@/components/Home/Stats";
 import Testimonials from "@/components/Home/Testimonials";
-
+import Awards from "@/components/Home/Awards";
 export default function Home() {
   return (
     <>
@@ -15,6 +15,7 @@ export default function Home() {
     <EmiCalculator />
     <Partners />
     <Stats />
+    <Awards />
     <Testimonials />
     </>
   );
