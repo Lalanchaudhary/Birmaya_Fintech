@@ -48,14 +48,9 @@ export default function Navbar() {
 
                 {/* CTA Button */}
                 <div className="hidden lg:block">
-                    <a
-                        href="#emi-calculator"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-primary text-white px-6 py-3 rounded-lg text-center font-semibold"
-                    >
-                        Emi Calculator
-                    </a>
+                    <Link href="/apply-loan" className="bg-accent text-white px-6 py-2 rounded-lg">
+                        Apply Loan
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -81,8 +76,7 @@ export default function Navbar() {
 
                     {/* Slide Drawer */}
                     <div
-                        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-50 shadow-2xl 
-  transform transition-transform duration-500 ease-in-out
+                        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-50 shadow-2xl transform transition-transform duration-500 ease-in-out
   ${open ? "translate-x-0" : "translate-x-full"}`}
                     >
                         {/* Header */}
@@ -105,14 +99,9 @@ export default function Navbar() {
 
                         {/* CTA */}
                         <div className="p-6 mt-auto">
-                            <a
-                                href="#emi-calculator"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-primary text-white px-6 py-3 rounded-lg text-center font-semibold"
-                            >
-                                EMI Calculator
-                            </a>
+                            <Link href="/apply-loan" className="bg-accent text-white px-6 py-2 rounded-lg">
+                                Apply Loan
+                            </Link>
 
                         </div>
                     </div>
