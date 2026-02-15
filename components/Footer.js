@@ -51,13 +51,13 @@ export default function Footer() {
 
             <div className="space-y-3 text-white/70">
               <p className="flex items-center gap-2">
-                <FaPhone /> +91 98765 43210
+                <FaPhone /> +91 8287868048
               </p>
               <p className="flex items-center gap-2">
-                <FaEnvelope /> info@birmayafintech.com
+                <FaEnvelope /> birmayafintech@gmail.com
               </p>
               <p className="flex items-center gap-2">
-                <FaMapMarkerAlt /> Noida, India
+                <FaMapMarkerAlt /> Office address - F-01, first floor, D-36, sector- 2, Noida , G.B Nagar, U.P-201301
               </p>
             </div>
           </div>
