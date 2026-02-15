@@ -6,7 +6,7 @@ export default function AboutIntro() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
         <Image
-          src="/about/about.jpg"
+          src="/about.jpg"
           alt="about"
           width={500}
           height={400}

@@ -35,7 +35,7 @@ export default function ContactInfo() {
               </div>
               <div>
                 <h4 className="font-semibold text-lg text-primary">Call Us</h4>
-                <p className="text-gray-600">+91 98765 43210</p>
+                <p className="text-gray-600">+91 8287868048</p>
               </div>
             </div>
 
@@ -46,7 +46,7 @@ export default function ContactInfo() {
               </div>
               <div>
                 <h4 className="font-semibold text-lg text-primary">Email</h4>
-                <p className="text-gray-600">info@birmayafintech.com</p>
+                <p className="text-gray-600">birmayafintech@ gmail.com</p>
               </div>
             </div>
 
@@ -59,8 +59,9 @@ export default function ContactInfo() {
                 <h4 className="font-semibold text-lg text-primary">Office</h4>
                 <p className="text-gray-600">
                   Birmaya Fintech Pvt Ltd<br />
-                  Sector 02, Noida<br />
-                  Uttar Pradesh, India
+                  F-01, first floor, D-36, sector- 2, Noida
+                 <br />
+                  G.B Nagar, U.P-201301
                 </p>
               </div>
             </div>
