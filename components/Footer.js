@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { 
+  FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter
+} from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -46,21 +49,59 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
+{/* Contact Info */}
+<div>
+  <h3 className="font-semibold text-lg mb-4">Contact</h3>
 
-            <div className="space-y-3 text-white/70">
-              <p className="flex items-center gap-2">
-                <FaPhone /> +91 8287868048
-              </p>
-              <p className="flex items-center gap-2">
-                <FaEnvelope /> birmayafintech@gmail.com
-              </p>
-              <p className="flex items-center gap-2">
-                <FaMapMarkerAlt /> Office address - F-01, first floor, D-36, sector- 2, Noida , G.B Nagar, U.P-201301
-              </p>
-            </div>
-          </div>
+  <div className="space-y-3 text-white/70">
+    <p className="flex items-center gap-2">
+      <FaPhone /> +91 8287868048
+    </p>
+    <p className="flex items-center gap-2">
+      <FaEnvelope /> birmayafintech@gmail.com
+    </p>
+    <p className="flex items-start gap-2">
+      <FaMapMarkerAlt className="mt-1"/>
+      Office address - F-01, first floor, D-36, sector-2, Noida, G.B Nagar, U.P-201301
+    </p>
+  </div>
+
+  {/* Social Media */}
+  <div className="flex gap-4 mt-6">
+    <a
+      href="https://x.com/BIRMAYAFINTECH"
+      target="_blank"
+      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
+    >
+      <FaXTwitter />
+    </a>
+
+    <a
+      href="https://www.instagram.com/birmaya_fintech_pvt_ltd?igsh=MXFxajk4dzdmdzdmNw=="
+      target="_blank"
+      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
+    >
+      <FaInstagram />
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/birmaya-fintech-b906883a3"
+      target="_blank"
+      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
+    >
+      <FaLinkedinIn />
+    </a>
+
+    <a
+      href="https://www.facebook.com/share/1L21Jg4YHJ/"
+      target="_blank"
+      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
+    >
+      <FaFacebookF />
+    </a>
+  </div>
+</div>
+
 
         </div>
 
