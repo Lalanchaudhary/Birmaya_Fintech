@@ -67,39 +67,47 @@ export default function Footer() {
   </div>
 
   {/* Social Media */}
-  <div className="flex gap-4 mt-6">
-    <a
-      href="https://x.com/BIRMAYAFINTECH"
-      target="_blank"
-      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
-    >
-      <FaXTwitter />
-    </a>
+{/* Social Media */}
+<div className="flex gap-4 mt-6">
+  
+  {/* Twitter */}
+  <a
+    href="https://x.com/BIRMAYAFINTECH"
+    target="_blank"
+    className="bg-white p-3 rounded-full hover:scale-110 transition"
+  >
+    <FaXTwitter className="text-black text-lg" />
+  </a>
 
-    <a
-      href="https://www.instagram.com/birmaya_fintech_pvt_ltd?igsh=MXFxajk4dzdmdzdmNw=="
-      target="_blank"
-      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
-    >
-      <FaInstagram />
-    </a>
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/birmaya_fintech_pvt_ltd?igsh=MXFxajk4dzdmdzdmNw=="
+    target="_blank"
+    className="bg-white p-3 rounded-full hover:scale-110 transition"
+  >
+    <FaInstagram className="text-[#E4405F] text-lg" />
+  </a>
 
-    <a
-      href="https://www.linkedin.com/in/birmaya-fintech-b906883a3"
-      target="_blank"
-      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
-    >
-      <FaLinkedinIn />
-    </a>
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/birmaya-fintech-b906883a3"
+    target="_blank"
+    className="bg-white p-3 rounded-full hover:scale-110 transition"
+  >
+    <FaLinkedinIn className="text-[#0077B5] text-lg" />
+  </a>
 
-    <a
-      href="https://www.facebook.com/share/1L21Jg4YHJ/"
-      target="_blank"
-      className="bg-white/10 p-3 rounded-full hover:bg-accent transition"
-    >
-      <FaFacebookF />
-    </a>
-  </div>
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/share/1L21Jg4YHJ/"
+    target="_blank"
+    className="bg-white p-3 rounded-full hover:scale-110 transition"
+  >
+    <FaFacebookF className="text-[#1877F2] text-lg" />
+  </a>
+
+</div>
+
 </div>
 
 
