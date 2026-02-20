@@ -4,9 +4,9 @@ import { FaUsers, FaCheckCircle, FaUniversity, FaAward } from "react-icons/fa";
 
 const stats = [
   { icon: <FaUsers />, number: 5000, label: "Happy Customers" },
-  { icon: <FaCheckCircle />, number: 12000, label: "DISBURSED AMOUNT" },
+  { icon: <FaCheckCircle />, number: 12000, label: "Disbursed Amount" },
   { icon: <FaUniversity />, number: 35, label: "Partner Banks" },
-  { icon: <FaAward />, number: 10, label: "YEARS OF EXCELLENCE" },
+  { icon: <FaAward />, number: 10, label: "Years Of Excellence" },
 ];
 
 export default function Stats() {

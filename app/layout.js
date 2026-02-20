@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import WhatsappButton from "@/components/WhatsappButton";
+import LoanChatbot from "@/components/LoanChatbot";
+import RepaymentPopup from "@/components/RepaymentPopup";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,10 +26,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar/>
+        <RepaymentPopup />
         <CustomCursor />
+        <LoanChatbot />
         <WhatsappButton />
         {children}
         <Footer />
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
       </body>
     </html>
   );
