@@ -341,7 +341,7 @@ export default function LoanChatbot() {
 
       <div
         onClick={() => setOpen((prev) => !prev)}
-        className="fixed bottom-28 right-6 p-4 rounded-full cursor-pointer shadow-xl z-50"
+        className={`fixed bottom-28 right-6 p-4 rounded-full cursor-pointer shadow-xl z-50 ${open ? 'hidden lg:block' : 'block'}`}
         style={{ backgroundColor: "#272361" }}
       >
         <FaRobot size={24} className="text-white" />
