@@ -72,7 +72,8 @@ export const loanDetails = [
       "Processing fee: around 1% to 2.5%.",
       "Collateral requirement for secured options.",
       "Prepayment charges.",
-      "EMI affordability and hidden fees.",
+      "EMI affordability",
+      "No hidden fees"
     ],
   },
   {
