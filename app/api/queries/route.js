@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import Query from "@/models/Query";
 import { getAdminSession } from "@/lib/adminAuth";
+import { appendToSheet } from "@/lib/googleSheets";
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -55,6 +56,15 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+
+    await appendToSheet("query", [
+      new Date().toISOString(),
+      name,
+      email,
+      phone,
+      city,
+      message,
+    ]);
 
     await dbConnect();
 

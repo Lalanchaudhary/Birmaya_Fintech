@@ -7,7 +7,6 @@ const navItems = [
   { label: "Blogs", href: "/admin/blogs" },
   { label: "Jobs", href: "/admin/jobs" },
   { label: "LoanChat Leads", href: "/admin/leads" },
-  { label: "Query", href: "/admin/queries" },
 ];
 
 export default function AdminSidebar() {

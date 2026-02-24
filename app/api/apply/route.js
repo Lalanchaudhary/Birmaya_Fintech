@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
-import { Readable } from "stream";
 import { appendToSheet } from "@/lib/googleSheets";
 
 /* =========================
@@ -63,15 +62,6 @@ function getGoogleAuth(scopes) {
     key: privateKey,
     scopes,
   });
-}
-
-function isServiceAccountQuotaError(error) {
-  const message = String(error?.message || "");
-  const status = error?.code || error?.status;
-  return (
-    status === 403 &&
-    /Service Accounts do not have storage quota/i.test(message)
-  );
 }
 
 /* =========================
@@ -163,12 +153,8 @@ export async function POST(req) {
     const safeFileName = sanitizeFileName(`${Date.now()}-${resume.name}`);
 
     /* Google Auth */
-    const auth = getGoogleAuth([
-      "https://www.googleapis.com/auth/drive",
-      "https://www.googleapis.com/auth/spreadsheets",
-    ]);
+    const auth = getGoogleAuth(["https://www.googleapis.com/auth/spreadsheets"]);
 
-    const drive = google.drive({ version: "v3", auth });
     const sheets = google.sheets({ version: "v4", auth });
 
     /* Duplicate Email Check */
@@ -185,43 +171,6 @@ export async function POST(req) {
       );
     }
 
-    /* Upload to Drive with Safe Stream + Retry */
-    let driveResponse = null;
-    let resumeLink = "";
-    let resumeUploadNote = "";
-
-    for (let attempt = 1; attempt <= 3; attempt++) {
-      try {
-        const stream = new Readable();
-        stream.push(resumeBuffer);
-        stream.push(null);
-
-        driveResponse = await drive.files.create({
-          requestBody: {
-            name: safeFileName,
-            parents: [process.env.GOOGLE_DRIVE_FOLDER_ID],
-          },
-          supportsAllDrives: true,
-          media: {
-            mimeType: resume.type,
-            body: stream,
-          },
-        });
-
-        resumeLink = `https://drive.google.com/file/d/${driveResponse.data.id}/view`;
-        break;
-      } catch (err) {
-        if (isServiceAccountQuotaError(err)) {
-          resumeUploadNote =
-            "Drive upload skipped: service account storage quota limitation.";
-          break;
-        }
-
-        if (attempt === 3) throw err;
-        await new Promise((r) => setTimeout(r, 500 * attempt));
-      }
-    }
-
     /* Save to Google Sheet */
     await appendToSheet("career", [
       new Date().toISOString(),
@@ -230,7 +179,7 @@ export async function POST(req) {
       email,
       phone,
       coverLetter,
-      resumeLink || resumeUploadNote || "Drive upload unavailable",
+      "Resume sent as email attachment",
       ip,
     ]);
 
@@ -254,11 +203,7 @@ export async function POST(req) {
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
-        <p><b>Resume:</b> ${
-          resumeLink
-            ? `<a href="${resumeLink}">View Resume</a>`
-            : "Attached in this email (Drive link unavailable)"
-        }</p>
+        <p><b>Resume:</b> Attached in this email</p>
         <hr/>
         <p>${coverLetter.replace(/\n/g, "<br>")}</p>
       `,

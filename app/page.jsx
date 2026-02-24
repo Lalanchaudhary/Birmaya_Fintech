@@ -7,6 +7,7 @@ import Partners from "@/components/Home/Partners";
 import Stats from "@/components/Home/Stats";
 import Testimonials from "@/components/Home/Testimonials";
 import Awards from "@/components/Home/Awards";
+import ContactFaq from "@/components/contact/ContactFAQ";
 export default function Home() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function Home() {
     <Stats />
     <Awards />
     <Testimonials />
+    <ContactFaq />
     </>
   );
 }
