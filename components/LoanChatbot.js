@@ -201,7 +201,7 @@ export default function LoanChatbot() {
   return (
     <div ref={chatContainerRef}>
       {open && (
-        <div className="fixed bottom-34 right-24 w-96 bg-white shadow-2xl rounded-xl overflow-hidden z-50">
+        <div className="fixed left-2 right-2 bottom-24 w-auto max-w-[calc(100vw-1rem)] bg-white shadow-2xl rounded-xl overflow-hidden z-50 sm:left-auto sm:right-6 sm:w-96 sm:max-w-none sm:bottom-34">
           <div
             className="text-white p-4 flex justify-between items-center"
             style={{ backgroundColor: "#272361" }}
@@ -210,7 +210,7 @@ export default function LoanChatbot() {
             <FaTimes onClick={() => setOpen(false)} className="cursor-pointer" />
           </div>
 
-          <div className="h-96 overflow-y-auto p-4 space-y-3 bg-gray-100">
+          <div className="h-[65vh] max-h-[32rem] overflow-y-auto p-4 space-y-3 bg-gray-100 sm:h-96">
             {messages.map((msg, i) => (
               <div
                 key={i}
