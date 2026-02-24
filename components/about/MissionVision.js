@@ -6,14 +6,14 @@ export default function MissionVision() {
         <div className="bg-white p-10 rounded-2xl shadow-md">
           <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
           <p className="text-gray-600">
-            To make loan approval fast, simple and transparent for everyone.
+            To provide fast, transparent, and customized financial solutions that meet every client’s unique needs.
           </p>
         </div>
 
         <div className="bg-white p-10 rounded-2xl shadow-md">
           <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
           <p className="text-gray-600">
-            To become India’s most trusted fintech partner for financial growth.
+            To become a trusted financial partner empowering every individual and business to achieve their dreams.
           </p>
         </div>
 

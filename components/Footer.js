@@ -55,7 +55,7 @@ export default function Footer() {
 
   <div className="space-y-3 text-white/70">
     <p className="flex items-center gap-2">
-      <FaPhone /> +91 8287868048
+      <FaPhone /> +91 8287868048, +91 9217924215
     </p>
     <p className="flex items-center gap-2">
       <FaEnvelope /> birmayafintech@gmail.com

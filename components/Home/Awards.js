@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const awards = [
+  "/awards/image.png",
   "/awards/image1.jpg",
   "/awards/image2.jpg",
   "/awards/image3.jpg",
@@ -8,6 +9,7 @@ const awards = [
   "/awards/image5.jpg",
   "/awards/image6.jpg",
   "/awards/image7.jpg",
+    "/awards/image8.jpeg",
 ];
 export default function Awards() {
   return (

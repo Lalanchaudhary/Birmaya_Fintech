@@ -35,7 +35,7 @@ export default function ContactInfo() {
               </div>
               <div>
                 <h4 className="font-semibold text-lg text-primary">Call Us</h4>
-                <p className="text-gray-600">+91 8287868048</p>
+                <p className="text-gray-600">+91 8287868048, +91 9217924215</p>
               </div>
             </div>
 
