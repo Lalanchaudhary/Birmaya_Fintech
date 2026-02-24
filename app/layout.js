@@ -1,11 +1,8 @@
 import "./globals.css";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
-import WhatsappButton from "@/components/WhatsappButton";
-import LoanChatbot from "@/components/LoanChatbot";
-import RepaymentPopup from "@/components/RepaymentPopup";
+import SiteChrome from "@/components/SiteChrome";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,15 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar/>
-        <RepaymentPopup />
-        <CustomCursor />
-        <LoanChatbot />
-        <WhatsappButton />
-        {children}
-        <Footer />
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SiteChrome>{children}</SiteChrome>
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="afterInteractive" />
       </body>
     </html>
   );

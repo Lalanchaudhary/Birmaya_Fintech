@@ -1,45 +1,52 @@
-import { FaHome, FaCar, FaBriefcase, FaUser, FaBuilding, FaChartLine } from "react-icons/fa";
+import Link from "next/link";
+import {
+  FaHome,
+  FaCar,
+  FaBriefcase,
+  FaUser,
+  FaBuilding,
+  FaChartLine,
+  FaGraduationCap,
+} from "react-icons/fa";
+import { loanDetails } from "@/data/loanDetails";
 
-const services = [
-    { icon: <FaUser />, title: "Personal Loan", desc: "Quick personal loans with minimal documentation." },
-    { icon: <FaBriefcase />, title: "Business Loan", desc: "Grow your business with flexible funding." },
-    { icon: <FaHome />, title: "Home Loan", desc: "Turn your dream home into reality with easy EMIs." },
-    { icon: <FaCar />, title: "Car Loan", desc: "Drive your dream car with low interest rates." },
-    { icon: <FaBuilding />, title: "Loan Against Property", desc: "Unlock your property’s financial value." },
-    { icon: <FaChartLine />, title: "Working Capital", desc: "Keep your business running smoothly." },
-];
+const iconMap = {
+  "personal-loan": FaUser,
+  "business-loan": FaBriefcase,
+  "home-loan": FaHome,
+  "auto-loan": FaCar,
+  "loan-against-property": FaBuilding,
+  "loan-against-shares": FaChartLine,
+  "education-loan": FaGraduationCap,
+};
 
 export default function ServicesGrid() {
-    return (
-        <section className="py-24 bg-[#F7F9FC]">
-            <div className="max-w-7xl mx-auto px-6">
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {services.map((service, i) => (
-                        <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition">
-
-                            <div className="text-3xl text-accent mb-4">
-                                {service.icon}
-                            </div>
-
-                            <h3 className="text-xl font-bold text-primary mb-3">
-                                {service.title}
-                            </h3>
-
-                            <p className="text-gray-600 mb-6">
-                                {service.desc}
-                            </p>
-
-                            <p className="text-accent font-semibold">
-                                Contact Us for Details →
-                            </p>
-
-
-                        </div>
-                    ))}
+  return (
+    <section className="py-24 bg-[#F7F9FC]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {loanDetails.map((service) => {
+            const Icon = iconMap[service.slug] || FaUser;
+            return (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition block"
+              >
+                <div className="text-3xl text-accent mb-4">
+                  <Icon />
                 </div>
 
-            </div>
-        </section>
-    );
+                <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
+
+                <p className="text-gray-600 mb-6">{service.shortDesc}</p>
+
+                <p className="text-accent font-semibold">Read Details -&gt;</p>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }

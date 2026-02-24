@@ -9,7 +9,7 @@ export default function CreateJobPage() {
         location: "",
         type: "Full Time",
         description: "",
-        requirements: "", // Will be split by newline
+        requirements: "",
     });
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
@@ -23,10 +23,11 @@ export default function CreateJobPage() {
         setLoading(true);
         setMessage("");
 
-        // Prepare data
         const payload = {
             ...formData,
-            requirements: formData.requirements.split("\n").filter((line) => line.trim() !== ""),
+            requirements: formData.requirements
+                .split("\n")
+                .filter((line) => line.trim() !== ""),
         };
 
         try {
@@ -38,14 +39,25 @@ export default function CreateJobPage() {
 
             const data = await res.json();
 
+            if (res.status === 401) {
+                router.push("/admin/login");
+                return;
+            }
+
             if (data.success) {
                 setMessage("Job created successfully!");
-                setFormData({ title: "", location: "", type: "Full Time", description: "", requirements: "" });
-                setTimeout(() => router.push("/admin/jobs"), 1500);
+                setFormData({
+                    title: "",
+                    location: "",
+                    type: "Full Time",
+                    description: "",
+                    requirements: "",
+                });
+                setTimeout(() => router.push("/admin/jobs"), 1200);
             } else {
                 setMessage(data.error || "Failed to create job.");
             }
-        } catch (error) {
+        } catch {
             setMessage("An error occurred.");
         } finally {
             setLoading(false);
@@ -74,7 +86,7 @@ export default function CreateJobPage() {
                                     value={formData.title}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                                    className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-black"
                                     placeholder="e.g. Senior Developer"
                                 />
                             </div>
@@ -87,7 +99,7 @@ export default function CreateJobPage() {
                                     value={formData.location}
                                     onChange={handleChange}
                                     required
-                                    className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                                    className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-black"
                                     placeholder="e.g. Remote / New York"
                                 />
                             </div>
@@ -99,7 +111,7 @@ export default function CreateJobPage() {
                                 name="type"
                                 value={formData.type}
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-black"
                             >
                                 <option value="Full Time">Full Time</option>
                                 <option value="Part Time">Part Time</option>
@@ -116,7 +128,7 @@ export default function CreateJobPage() {
                                 onChange={handleChange}
                                 required
                                 rows="4"
-                                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-black"
                                 placeholder="Job responsibilities and details..."
                             />
                         </div>
@@ -128,8 +140,8 @@ export default function CreateJobPage() {
                                 value={formData.requirements}
                                 onChange={handleChange}
                                 rows="4"
-                                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                                placeholder="- React knowledge&#10;- 3+ years experience"
+                                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-black"
+                                placeholder={"- React knowledge\n- 3+ years experience"}
                             />
                         </div>
 

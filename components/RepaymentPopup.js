@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaWhatsapp, FaTimes } from "react-icons/fa";
-
+import { FaAngleDown , FaAngleUp } from "react-icons/fa";
 export default function RepaymentPopup() {
   const [show, setShow] = useState(false);
   const [expand, setExpand] = useState(false);
@@ -14,47 +14,25 @@ export default function RepaymentPopup() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handlePayment = async () => {
-    const res = await fetch("/api/create-order", {
-      method: "POST",
-    });
-
-    const order = await res.json();
-
-    const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-      amount: order.amount,
-      currency: order.currency,
-      order_id: order.id,
-      name: "Birmaya Fintech",
-      description: "Repayment Schedule Service",
-      handler: function (response) {
-        alert("Payment successful! Processing...");
-      },
-    };
-
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+  const handleClose = () => {
+    setShow(false);
+    window.dispatchEvent(new CustomEvent("open-loan-chatbot"));
   };
 
   if (!show) return null;
 
-  const whatsappLink = `https://wa.me/918287868048?text=Hi, I want my detailed Loan Repayment Schedule. Please guide me for ₹99 service.`;
+  const whatsappLink = "https://wa.me/918287868048?text=Hi, I want my detailed Loan Repayment Schedule. Please guide me for ?99 service.";
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999] p-4">
-
       <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden animate-fadeIn relative">
-
-        {/* Close */}
         <button
-          onClick={() => setShow(false)}
+          onClick={handleClose}
           className="absolute top-4 right-4 text-white/80 hover:text-white z-10"
         >
           <FaTimes size={18} />
         </button>
 
-        {/* Premium Header */}
         <div className="bg-gradient-to-r from-primary to-indigo-600 text-white p-8 text-center">
           <h2 className="text-2xl font-bold mb-2">
             Get Your Re-Payment Schedule
@@ -64,27 +42,22 @@ export default function RepaymentPopup() {
           </p>
         </div>
 
-        {/* Body */}
         <div className="p-8">
-
-          {/* Price Badge */}
           <div className="flex justify-center mb-6">
             <div className="bg-accent text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md">
-              Only ₹99 – One Time
+              Only ₹99 - One Time
             </div>
           </div>
 
-          {/* Description */}
           <p className="text-gray-600 text-center text-sm mb-6">
             Understand how much interest you are paying and plan smart repayments.
           </p>
 
-          {/* Expandable Info */}
           <button
             onClick={() => setExpand(!expand)}
             className="w-full text-left bg-gray-50 hover:bg-gray-100 p-4 rounded-xl font-semibold text-primary transition"
           >
-            What is Repayment Schedule? {expand ? "▲" : "▼"}
+            What is Repayment Schedule? {expand ? <FaAngleUp className='inline-block' /> : <FaAngleDown className='inline-block'/>}
           </button>
 
           {expand && (
@@ -103,18 +76,16 @@ export default function RepaymentPopup() {
                 <li>Track remaining balance</li>
                 <li>Decide best prepayment timing</li>
                 <a
-                href="/repayment.pdf"
-                download="Loan_Repayment_Schedule_Guide.pdf"
-                className="text-red-500 hover:underline block text-sm font-medium"
-              >
-                Learn More (Download PDF)
-              </a>
+                  href="/repayment.pdf"
+                  download="Loan_Repayment_Schedule_Guide.pdf"
+                  className="text-red-500 hover:underline block text-sm font-medium"
+                >
+                  Learn More (Download PDF)
+                </a>
               </ul>
-              
             </>
           )}
 
-          {/* CTA */}
           <a
             href={whatsappLink}
             target="_blank"
@@ -123,9 +94,7 @@ export default function RepaymentPopup() {
             <FaWhatsapp size={20} />
             Chat on WhatsApp
           </a>
-
         </div>
-
       </div>
     </div>
   );
