@@ -215,19 +215,52 @@ export async function POST(req) {
       ],
     });
 
-    /* Candidate Email */
-    await transporter.sendMail({
-      from: `"HR Team" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: `Application Received - ${jobTitle}`,
-      html: `
-        <h3>Dear ${name},</h3>
-        <p>Thank you for applying for <b>${jobTitle}</b>.</p>
-        <p>Our team will review your application and contact you soon.</p>
-        <br/>
-        <small>This is an automated email. Please do not reply.</small>
-      `,
-    });
+await transporter.sendMail({
+  from: `"HR Team" <${process.env.EMAIL_USER}>`,
+  to: email,
+  subject: `Application Received - ${jobTitle}`,
+  html: `
+  <div style="font-family: Arial, sans-serif; background-color:#f4f6f9; padding:20px;">
+    <div style="max-width:600px; margin:auto; background:#ffffff; padding:30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+      
+      <!-- Header -->
+      <div style="text-align:center; margin-bottom:20px;">
+        <img src="https://birmayafintech.com/logo.png" 
+             alt="Birmaya Fintech" 
+             width="70" 
+             style="margin-bottom:10px;" />
+             
+        <h2 style="margin:0; color:#272361;">BI₹MAYA FINTECH</h2>
+        <p style="margin:0; color:#f78812; font-size:13px;">
+          Commitments Honored, Loans Delivered
+        </p>
+      </div>
+
+      <!-- Body -->
+      <p style="font-size:15px; color:#333;">Dear <b>${name}</b>,</p>
+
+      <p style="font-size:15px; color:#333;">
+        Thank you for applying for the position of 
+        <b style="color:#272361;">${jobTitle}</b>.
+      </p>
+
+      <p style="font-size:15px; color:#333;">
+        Our HR team is currently reviewing your application. 
+        If shortlisted, we will contact you shortly.
+      </p>
+
+      <br/>
+
+      <!-- Footer -->
+      <hr style="border:none; border-top:1px solid #eee;" />
+      <p style="font-size:12px; color:#888; text-align:center;">
+        This is an automated email. Please do not reply.
+      </p>
+
+    </div>
+  </div>
+  `,
+});
 
     return NextResponse.json({ success: true });
 
