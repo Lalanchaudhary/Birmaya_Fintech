@@ -32,6 +32,7 @@ export default async function ServiceDetailPage({ params }) {
           <DetailCard title="Key Features" items={loan.keyFeatures} />
               {loan.typeof&&<DetailCard title="Type of" items={loan.typeof} />}
           {loan.howItWorks&&<DetailCard title="How it's work" items={loan.howItWorks} />}
+          {loan.expense&&<DetailCard title="Expense Covered" items={loan.expense} />}
           <DetailCard title="Eligibility Criteria" items={loan.eligibility} />
           <DetailCard title="Documents Required" items={loan.documents} />
           <DetailCard title="Advantages" items={loan.advantages} />

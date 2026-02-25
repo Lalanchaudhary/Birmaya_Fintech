@@ -305,11 +305,20 @@ export const loanDetails = [
       "3.	Undergraduate Loan – For bachelor’s degree.",
       "4.	Postgraduate Loan – For master’s or higher studies."
     ],
+    expense:[
+      "Tuition fees",
+      "Examination and library fees",
+      "Books and study materials",
+      "Hostel or accommodation fees",
+      "Travel expenses (for studying abroad)",
+      "Laptop (in some cases)"
+    ],
     keyFeatures: [
-      "Covers tuition, exam/library fees, books, hostel, and eligible travel.",
-      "Repayment usually starts after moratorium (course duration + 6 to 12 months).",
-      "May be disbursed directly to institution as per lender policy.",
-      "Collateral may be required for higher ticket sizes.",
+      "Principal – Amount borrowed.",
+      "Interest Rate – Extra percentage charged on the loan.",
+      "Moratorium Period – Time before repayment starts.",
+      "EMI (Equated Monthly Installment) – Fixed monthly repayment amount.",
+      "Collateral – Property or asset pledged as security (for higher loan amounts)."
     ],
     eligibility: [
       "Admission to an eligible course/institution.",
@@ -329,10 +338,9 @@ export const loanDetails = [
       "Tax benefits in some states/countries",
     ],
     thingsToCheck: [
-      "Moratorium and repayment start date.",
-      "Floating vs fixed interest structure.",
-      "Collateral requirement for higher amount.",
-      "Prepayment terms and hidden charges.",
+      "Interest structure",
+      "Prepayment charges",
+      "No hidden charges",
     ],
   },
 ];
