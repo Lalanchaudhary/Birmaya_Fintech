@@ -88,7 +88,7 @@ export default function CreateBlogPage() {
                 value={formData.title}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-800"
                 placeholder="Enter blog title"
               />
             </div>
@@ -100,7 +100,7 @@ export default function CreateBlogPage() {
                 value={formData.excerpt}
                 onChange={handleChange}
                 rows="3"
-                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-800"
                 placeholder="Short summary shown in blog list"
               />
             </div>
@@ -113,7 +113,7 @@ export default function CreateBlogPage() {
                 onChange={handleChange}
                 required
                 rows="10"
-                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-800"
                 placeholder="Write full blog content"
               />
             </div>
@@ -125,7 +125,7 @@ export default function CreateBlogPage() {
                   type="file"
                   accept="image/png,image/jpeg,image/webp"
                   onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-                  className="w-full border border-gray-300 p-2.5 rounded-lg bg-white"
+                  className="w-full border border-gray-300 p-2.5 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-blue-500 outline-none"
                 />
                 <p className="text-xs text-gray-500 mt-1">JPG, PNG, WEBP up to 5MB</p>
               </div>
@@ -137,7 +137,7 @@ export default function CreateBlogPage() {
                   name="imageUrl"
                   value={formData.imageUrl}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-800"
                   placeholder="https://example.com/blog-image.jpg"
                 />
               </div>

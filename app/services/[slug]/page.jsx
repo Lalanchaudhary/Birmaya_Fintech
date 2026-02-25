@@ -30,10 +30,13 @@ export default async function ServiceDetailPage({ params }) {
       <section className="py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-6 space-y-8">
           <DetailCard title="Key Features" items={loan.keyFeatures} />
+              {loan.typeof&&<DetailCard title="Type of" items={loan.typeof} />}
+          {loan.howItWorks&&<DetailCard title="How it's work" items={loan.howItWorks} />}
           <DetailCard title="Eligibility Criteria" items={loan.eligibility} />
           <DetailCard title="Documents Required" items={loan.documents} />
           <DetailCard title="Advantages" items={loan.advantages} />
           <DetailCard title="Things To Check Before Applying" items={loan.thingsToCheck} />
+          {loan.example&&<DetailCard title="Example" items={loan.example} />}
         </div>
       </section>
     </main>
