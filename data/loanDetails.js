@@ -42,17 +42,14 @@ export const loanDetails = [
     shortDesc: "Flexible funding to grow and expand your business.",
     overview:
       "business loan is financial assistance provided to entrepreneurs, startups, and companies to support business needs such as: Expanding operations, Managing working capital, Buying inventory, Hiring staff",
-    typeof: {
-      title: "Types of Business Loans",
-      content: [
+    typeof:[
         "1.	Term Loan – Lump sum amount repaid in EMIs over a fixed period",
         "2.	Working Capital Loan – Short-term loan for daily business expenses",
         "3.	Equipment/Machinery Loan – For purchasing business equipment",
         "4.	CGTMSE/SME Loan – For small and medium enterprises",
         "5.	Overdraft Facility – Withdraw money as needed up to a limit."
 
-      ]
-    },
+      ],
     keyFeatures: [
       "Loan amount: Usually ₹10lakh to ₹1.5crore (depends on lender & business profile)",
       "Interest rate: Around 13.5% to approx. 20% per annum (varies by credit profile)",
