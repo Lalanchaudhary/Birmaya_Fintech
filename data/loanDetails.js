@@ -311,11 +311,11 @@ export const loanDetails = [
       "Laptop (in some cases)"
     ],
     keyFeatures: [
-      "Principal – Amount borrowed.",
-      "Interest Rate – Extra percentage charged on the loan.",
-      "Moratorium Period – Time before repayment starts.",
-      "EMI (Equated Monthly Installment) – Fixed monthly repayment amount.",
-      "Collateral – Property or asset pledged as security (for higher loan amounts)."
+      "Covers tuition and other study-related expenses.",
+      "Repayment starts after course completion (moratorium period).",
+      "Flexible repayment tenure (5–15 years).",
+      "Lower interest rates compared to personal loans.",
+      "Tax benefit on interest under Section 80E of the Income Tax Act, 1961 (India)."
     ],
     eligibility: [
       "Admission to an eligible course/institution.",

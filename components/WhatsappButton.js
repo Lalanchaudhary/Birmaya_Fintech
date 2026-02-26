@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsappButton() {
-  const phoneNumber = "9192179 24215"; // yaha apna number daalna (91 without +)
+  const phoneNumber = "919217924215"; // yaha apna number daalna (91 without +)
   const message = "Hello, I want to know about loan services";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
