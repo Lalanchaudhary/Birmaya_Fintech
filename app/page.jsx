@@ -14,8 +14,8 @@ export default function Home() {
     <>
     <HeroCarousel/>
     <LoanProducts />
-    <EmiCalculator />
     <RepaymentPopup />
+    <EmiCalculator />
     <Partners />
     <Stats />
     <Awards />
