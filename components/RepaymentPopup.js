@@ -7,7 +7,7 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 export default function RepaymentPopup() {
   const [expand, setExpand] = useState(false);
   const whatsappLink =
-    "https://wa.me/918287868048?text=Hi, I want my detailed Loan Repayment Schedule. Please guide me for ?99 service.";
+    "https://wa.me/919217924215?text=Hi, I want my detailed Loan Repayment Schedule. Please guide me for ₹99 service.";
 
   return (
     <section className="w-full px-4 py-12 sm:px-6 lg:px-8">

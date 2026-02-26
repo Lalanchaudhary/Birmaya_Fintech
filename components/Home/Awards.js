@@ -31,14 +31,14 @@ export default function Awards() {
           {awards.map((img, i) => (
             <div
               key={i}
-              className="min-w-[140px] sm:min-w-[160px] md:min-w-[180px] 
+              className="min-w-[180px] sm:min-w-[160px] md:min-w-[220px] 
               bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition"
             >
               <Image
                 src={img}
                 alt="award"
-                width={150}
-                height={150}
+                width={170}
+                height={170}
                 className="object-contain rounded-sm"
               />
             </div>
