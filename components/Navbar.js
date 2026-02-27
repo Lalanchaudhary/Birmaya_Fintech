@@ -27,7 +27,7 @@ export default function Navbar() {
 
                     <div className="leading-tight">
                         <h1 className="text-sm sm:text-base lg:text-xl font-bold text-primary whitespace-nowrap">
-                            BIâ‚¹MAYA FINTECH
+                            BI₹MAYA FINTECH
                         </h1>
                         <p className="sm:block text-[8px] sm:text-sm text-accent font-semibold">
                             Commitments Honored, Loans Delivered

@@ -13,7 +13,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h2 className="text-2xl font-bold mb-3">BIRMAYA FINTECH</h2>
+            <h2 className="text-2xl font-bold mb-3">BI₹MAYA FINTECH</h2>
             <p className="text-white/70 mb-4">
               Commitments Honored, Loans Delivered
             </p>
