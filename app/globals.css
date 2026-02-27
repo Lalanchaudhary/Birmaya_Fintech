@@ -48,3 +48,13 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-in-out;
 }
+
+
+#nprogress .bar {
+  background: #272361; /* yaha apna primary color daalo */
+  height: 3px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #272361, 0 0 5px #272361;
+}

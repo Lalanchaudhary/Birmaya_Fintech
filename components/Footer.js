@@ -32,6 +32,7 @@ export default function Footer() {
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/career">Career</Link></li>
               <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/check-free-credit-score">Free Credit Score</Link></li>
               <li>
                 <a href="https://sachet.rbi.org.in/" target="_blank" rel="noopener noreferrer">
                   RBI Sachet

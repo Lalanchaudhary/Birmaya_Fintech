@@ -2,7 +2,8 @@ import "./globals.css";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import SiteChrome from "@/components/SiteChrome";
-
+import "nprogress/nprogress.css";
+import TopLoader from "@/components/TopLoader";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <TopLoader />
         <SiteChrome>{children}</SiteChrome>
         <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="afterInteractive" />
       </body>
