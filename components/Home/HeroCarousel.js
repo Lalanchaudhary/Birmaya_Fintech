@@ -4,7 +4,8 @@ import Image from "next/image";
 import useTypewriter from "./useTypewriter";
 import Link from "next/link";
 const phoneNumber = "919217924215"; // yaha apna number daalna (91 without +)
-const message = "Hello, I want to know about loan services";
+const repaymentMessage =
+  "Hi, I want my detailed Loan Repayment Schedule. Please guide me for Rs.99 service.";
 
 const slides = [
   {
@@ -26,10 +27,10 @@ const slides = [
   {
     desktop: "/hero/hero5.png",
     mobile: "/hero/mobile/hero5-mobile.png",
-    title: "Your Trusted Financial Partner",
-    desc: "Transparent process. No hidden charges.",
-    btn: "Talk to Expert",
-    href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    title: "Get Your Re-Payment Schedule",
+    desc: "Complete EMI breakdown & total interest insights. Only Rs.99 - One Time.",
+    btn: "Chat on WhatsApp",
+    href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(repaymentMessage)}`
   },
 ];
 
