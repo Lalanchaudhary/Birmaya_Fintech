@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import useTypewriter from "./useTypewriter";
+import Link from "next/link";
+const phoneNumber = "919217924215"; // yaha apna number daalna (91 without +)
+const message = "Hello, I want to know about loan services";
 
 const slides = [
   {
@@ -9,14 +12,16 @@ const slides = [
     mobile: "/hero/mobile/hero1-mobile.png",
     title: "Instant Loan Approval in 24 Hours",
     desc: "Minimal paperwork. Quick verification. Fast disbursal.",
-    btn: '',
+    btn: "Apply Now",
+    href: "/apply-loan"
   },
   {
     desktop: "/hero/hero2.png",
     mobile: "/hero/mobile/hero2-mobile.png",
-    title: "Fuel Your Business Growth",
-    desc: "Flexible business loans designed for your success.",
-    btn: '',
+    title: "Check Your Credit Score for Free",
+    desc: "Get your instant CIBIL score report with no cost and no hidden charges.",
+    btn: "Check Now",
+    href: "/check-free-credit-score"
   },
   {
     desktop: "/hero/hero5.png",
@@ -24,6 +29,7 @@ const slides = [
     title: "Your Trusted Financial Partner",
     desc: "Transparent process. No hidden charges.",
     btn: "Talk to Expert",
+    href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   },
 ];
 
@@ -60,11 +66,11 @@ export default function HeroCarousel() {
         >
           <Image src={isMobile ? slide.mobile : slide.desktop} alt="hero" fill className="object-cover" />
 
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
 
           {/* LEFT SIDE TEXT */}
           {index === current && (
-            <div className="absolute inset-0 flex items-center">
+            <div className="absolute inset-0 flex items-center z-51">
               <div className="max-w-7xl lg:ml-20 px-6 text-white">
                 <div className="max-w-xl">
 
@@ -77,9 +83,23 @@ export default function HeroCarousel() {
                     {typedDesc}
                   </p>
                   {slide.btn && (
-                    <button className="bg-accent px-8 py-3 rounded-lg font-semibold text-white hover:scale-105 transition">
-                      {slide.btn}
-                    </button>
+                    slide.href.startsWith("http") ? (
+                      <a
+                        href={slide.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-accent px-8 py-3 rounded-lg font-semibold text-white hover:scale-105 transition"
+                      >
+                        {slide.btn}
+                      </a>
+                    ) : (
+                      <Link
+                        href={slide.href}
+                        className="bg-accent px-8 py-3 rounded-lg font-semibold text-white hover:scale-105 transition"
+                      >
+                        {slide.btn}
+                      </Link>
+                    )
                   )}
                 </div>
               </div>
